@@ -7,31 +7,47 @@ function TaskCard({ task }) {
   const { deleteTask } = useTask();
 
   return (
-    <div className="bg-zinc-800 p-4 rounded-md max-w-md w-full">
-      <label className="text-1xl font-bold text-white">Producto:</label>
-      <header className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">{task.nombre}</h1>
-        <div className="flex gap-x-2 items-center">
-          <button
-            className="bg-red-500 text-white px-4 py-2 rounded-md my-2"
-            onClick={() => {
-              deleteTask(task._id);
-            }}
-          >
-            Borrar
-          </button>
+    <div className="bg-[#27272a] p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.01] max-w-md w-full">
+      <div className="space-y-4">
+        <div className="flex justify-between items-start">
+          <div>
+            <label className="text-gray-400 text-sm">Producto:</label>
 
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-md my-2">
-            <Link to={`/tasks/${task._id}`}> Editar </Link>
-          </button>
+            <h2 className="text-2xl font-bold text-[#6366f1] mt-1">
+              {task.nombre}
+            </h2>
+          </div>
+          <div className="flex gap-3">
+            <button
+              className="text-red-500 hover:text-red-600 bg-red-500/10 hover:bg-red-500/20 px-3 py-2 rounded-lg transition-colors duration-300"
+              onClick={() => {
+                deleteTask(task._id);
+              }}
+            >
+              Borrar
+            </button>
+
+            <button className="text-[#6366f1] hover:text-[#4f46e5] bg-[#6366f1]/10 hover:bg-[#6366f1]/20 px-3 py-2 rounded-lg transition-colors duration-300">
+              <Link to={`/tasks/${task._id}`}> Editar </Link>
+            </button>
+          </div>
         </div>
-      </header>
-      <label className="text-1xl font-bold text-white">Categoria:</label>
-      <p className="text-slate-300">{task.categoria}</p>
-      <label className="text-1xl font-bold text-white">Precio:</label>
-      <p className="text-slate-300">{task.precio}</p>
-      <label className="text-1xl font-bold text-white">Stock:</label>
-      <p className="text-slate-300">{task.stock}</p>
+        <div className="grid grid-cols-3 gap-4 pt-2">
+          <div>
+            <label className="text-gray-400 text-sm block">Categoria:</label>
+
+            <p className="text-white mt-1">{task.categoria}</p>
+          </div>
+          <div>
+            <label className="text-gray-400 text-sm block">Precio:</label>
+            <p className="text-white mt-1">{task.precio}</p>
+          </div>
+          <div>
+            <label className="text-gray-400 text-sm block">Stock:</label>
+            <p className="text-white mt-1">{task.stock}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
