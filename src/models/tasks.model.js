@@ -6,15 +6,19 @@ const taskSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    categoria: {
+    tipoDeTarea: {
       type: String,
       required: true,
+      enum: [
+        "Recurrente",
+        "Importante",
+        "No importante",
+        "Urgente",
+        "No urgente",
+      ],
+      default: "Recurrente",
     },
-    precio: {
-      type: String,
-      required: true,
-    },
-    stock: {
+    descripcion: {
       type: String,
       required: true,
     },

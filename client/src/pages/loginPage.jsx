@@ -28,36 +28,35 @@ function LoginPage() {
   }, [isAuthenticated, user, navigate]);
 
   return (
-    <div className="h-screen flex items-center justify-center bg-[#1a1a1a] overflow-hidden">
-      <div className="bg-[#27272a] p-6 rounded-2xl shadow-2xl w-full max-w-md transform transition-all hover:scale-[1.01]">
+    <div className="h-screen flex items-center justify-center bg-gray-200 overflow-hidden">
+      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md transform transition-all hover:scale-[1.01]">
         <div className="flex justify-center mb-6">
           <Link to="/">
-            <h2 className="text-3xl font-bold text-[#6366f1]">Task Manager</h2>
+            <h2 className="text-3xl font-bold text-[#1a237e] hover:text-[#151b57]">
+              Task Manager
+            </h2>
           </Link>
         </div>
 
         {signinErrors.map((error, i) => (
-          <div
-            key={i}
-            className="bg-red-500/10 border border-red-500/20 p-2 rounded-lg text-center mb-4 text-red-500"
-          >
+          <div key={i} className="bg-red-500 p-2 text-white rounded mb-4">
             {error}
           </div>
         ))}
 
-        <h2 className="text-2xl font-bold text-center text-white mb-6">
+        <h2 className="text-2xl font-bold text-center text-[#1a237e] mb-6">
           Bienvenido de nuevo
         </h2>
 
         <form onSubmit={onSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[#1a237e] mb-2">
               Email:
             </label>
             <input
               type="email"
               {...register("email", { required: true })}
-              className="w-full p-3 bg-[#3f3f46] border border-[#6366f1]/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6366f1] focus:border-transparent transition-all duration-200 text-white placeholder-gray-400"
+              className="w-full p-3 bg-white border border-[#E2E8F0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a237e] focus:border-transparent transition-all duration-200 text-[#1a237e] placeholder-[#94A3B8]"
               placeholder="tucorreo@ejemplo.com"
             />
             {errors.email && (
@@ -66,13 +65,13 @@ function LoginPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[#1a237e] mb-2">
               Contraseña:
             </label>
             <input
               type="password"
               {...register("password", { required: true })}
-              className="w-full p-3 bg-[#3f3f46] border border-[#6366f1]/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6366f1] focus:border-transparent transition-all duration-200 text-white placeholder-gray-400"
+              className="w-full p-3 bg-white border border-[#E2E8F0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a237e] focus:border-transparent transition-all duration-200 text-[#1a237e] placeholder-[#94A3B8]"
               placeholder="•••••••"
             />
             {errors.password && (
@@ -82,16 +81,16 @@ function LoginPage() {
 
           <button
             type="submit"
-            className="w-full py-4 bg-[#6366f1] text-white rounded-lg hover:bg-[#4f46e5] transition-all duration-300 transform hover:scale-[1.02] font-medium text-lg shadow-md hover:shadow-lg"
+            className="w-full py-4 bg-[#4CAF50] text-white rounded-lg hover:bg-[#388E3C] transition-all duration-300 transform hover:scale-[1.02] font-medium text-lg shadow-md hover:shadow-lg"
           >
             Iniciar sesión
           </button>
 
-          <p className="text-center text-gray-400 mt-6">
+          <p className="text-center text-[#1a237e] mt-6">
             ¿No tienes cuenta?{" "}
             <Link
               to="/register"
-              className="text-[#6366f1] hover:text-[#4f46e5] font-medium hover:underline"
+              className="text-[#1a237e] hover:text-[#388E3C] font-medium hover:underline"
             >
               Registrate
             </Link>

@@ -4,10 +4,12 @@ export const taskSchema = z.object({
   nombre: z.string({
     required_error: "Nombre es requerido",
   }),
-  categoria: z.string({
-    required_error: "Categoria es requerida",
+  descripcion: z.string({
+    required_error: "Descripcion es requerido",
   }),
-  stock: z.string({
-    required_error: "Stock es requerido",
+  tipoDeTarea: z.string({
+    required_error: "Tipo de tarea es requerido",
   }),
 });
+
+// sadsad

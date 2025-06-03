@@ -28,6 +28,25 @@ function navbar() {
               </li>
               <li>
                 <Link
+                  to="/tasks"
+                  className="bg-[#6366f1] text-white px-4 py-2 rounded-lg hover:bg-[#4f46e5] transition-all duration-300 transform hover:scale-[1.02] font-medium shadow-md hover:shadow-lg"
+                >
+                  Tareas
+                </Link>
+              </li>
+              {user.role === "admin" && (
+                <li>
+                  <Link
+                    to="/admin"
+                    className="bg-[#6366f1] text-white px-4 py-2 rounded-lg hover:bg-[#4f46e5] transition-all duration-300 transform hover:scale-[1.02] font-medium shadow-md hover:shadow-lg"
+                  >
+                    Administración
+                  </Link>
+                </li>
+              )}
+
+              <li>
+                <Link
                   to="/add-task"
                   className="bg-[#6366f1] text-white px-4 py-2 rounded-lg hover:bg-[#4f46e5] transition-all duration-300 transform hover:scale-[1.02] font-medium shadow-md hover:shadow-lg"
                 >

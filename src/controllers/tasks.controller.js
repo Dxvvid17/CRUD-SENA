@@ -8,13 +8,12 @@ export const getTasks = async (req, res) => {
 };
 
 export const createTasks = async (req, res) => {
-  const { nombre, categoria, precio, stock, date } = req.body; // Qué es lo que voy a recibir?
+  const { nombre, tipoDeTarea, descripcion, date } = req.body; // Qué es lo que voy a recibir?
   const newTask = new Task({
     // Creo la tarea
     nombre,
-    categoria,
-    precio,
-    stock,
+    tipoDeTarea,
+    descripcion,
     date,
     user: req.user.id, //Esto es para identificar que tarea le pertenece a qué usuario
   });
